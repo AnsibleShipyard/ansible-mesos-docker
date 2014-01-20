@@ -1,0 +1,29 @@
+---
+#
+# playbook: ansible-mesos-docker
+# notes: based on executor install docs
+# depends:
+#   - ansible-mesos
+#   - ansible-marathon
+#   - ansible-docker
+#
+
+- hosts: all
+  gather_facts: no
+  sudo: True
+  vars:
+    version: "0.1.0"
+
+    lib_path: "/var/lib/mesos"
+    executor_path: "{{lib_path}}/executors"
+    install_path: "{{executor_path}}/docker"
+    source_repo_name: "mesosphere/mesos-docker"
+    mesos_docker_branch: "master"
+    mesos_docker_binary: "bin/mesos-docker"
+    raw_path: "https://raw.github.com/{{source_repo_name}}/{{mesos_docker_branch}}/{{mesos_docker_binary}}"
+  tasks:
+    - name: Check install install location
+      file: path={{executor_path}} state=directory
+
+    - name: Download mesos-docker
+      get_url: url={{raw_path}} dest={{install_path}}
