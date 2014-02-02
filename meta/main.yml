@@ -106,7 +106,6 @@ galaxy_info:
   - framework
 dependencies:
   - ansible-docker
-  - ansible-mesos
   - ansible-marathon
   # List your role dependencies here, one per line. Only
   # dependencies available via galaxy should be listed here.
