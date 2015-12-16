@@ -1,6 +1,13 @@
 ansible-mesos-docker
 ====================
 
+# deprecated
+
+Officially deprecated. See the playbooks below.
+
+1. [AnsibleShipyard/ansible-docker](https://github.com/AnsibleShipyard/ansible-docker)
+2. [AnsibleShipyard/ansible-mesos](https://github.com/AnsibleShipyard/ansible-mesos)
+
 Mesos-Docker Playbook for Ansible
 
 Support open source!
